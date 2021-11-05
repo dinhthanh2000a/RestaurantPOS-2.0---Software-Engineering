@@ -268,6 +268,10 @@ section .container {
   border-radius: 0.25rem;
   background-color: #fff;
 }
+.dish .image img {
+  display: block;
+  width: 100%;
+}
 .dish .info {
   padding: 2rem;
   border: 1px solid #000;
@@ -412,6 +416,16 @@ section .container {
   padding-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 480px) {
+  .cart {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .cart .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 .orders {
   margin-top: 10rem;
 }
@@ -579,6 +593,70 @@ section .container {
     right: 0;
     transform: translate(78%, 61%);
   }
+}
+.revenue {
+  padding-top: 12rem;
+}
+.revenue .card {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.13), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+.revenue .card-title {
+  font-size: 2rem;
+  font-weight: 500;
+  background-color: #0bbc61;
+  padding: 2rem 1.5rem;
+  color: #fff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.order-today {
+  margin-top: 3rem;
+  background-color: #eee;
+}
+.order-today h3 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.order-today .list {
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+}
+.order-today .item {
+  box-shadow: 0px 1px 15px 1px #eee;
+  background-color: #fff;
+}
+.order-today .item .total {
+  background-color: #000;
+  padding: 1rem;
+}
+.order-today .item .total span {
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .revenue,
+.order-today {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+.footer.active {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
