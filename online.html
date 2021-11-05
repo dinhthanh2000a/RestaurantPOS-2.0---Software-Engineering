@@ -16,6 +16,38 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <style> 
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-size: 1.6rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            color: #333;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 991px) {
+            .container,
+            section .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+        @media only screen and (max-width: 991px) {
+            html {
+                font-size: 55%;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            html {
+                font-size: 50%;
+            }
+        }
         .paymentWrap {
             padding: 50px;
         }
@@ -213,5 +245,6 @@
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="./script.js"></script>
 </body>
 </html>
