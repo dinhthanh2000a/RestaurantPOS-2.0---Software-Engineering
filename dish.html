@@ -15,7 +15,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="container header__container">
+        <div class="header__container">
             <a href="" class="logo"><i class="fas fa-utensils"></i>POS</a>
             <div class="icons">
                 <a href="./index.html">
@@ -42,10 +42,10 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="image">
-                <img src="./images/dish-1.png" alt="">
+                <img src="./images/dish1.png" alt="">
             </div>
-            <div class="info">
-                <h3>Hamburgur</h3>
+            <div class="info" id="addsub">
+                <h3>Bò bít tết</h3>
                 <p class="field"><span class="title">Price:</span> $15.99</p>
                 <p class="field"><span class="title">Description:</span> <br>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quidem a magnam aperiam quisquam 
@@ -54,32 +54,30 @@
                  </p>
                 <div class="field quantity">
                     <span class="title">Quantity:</span>
-                    <span class="icon" id="icon-add">+</span>
-                    <input type="number" value="1" id="quantity" name="quantity">
-                    <span class="icon" id="icon-sub">-</span>
+                    <span class="icon icon-add">+</span>
+                    <input type="number" value="1" class="dish-quantity" name="quantity">
+                    <span class="icon icon-sub">-</span>
                 </div>
                 <button class="btn">ADD TO CART</button>
             </div>
         </div>
     </section>
 
+    <div class="df">
+        sfdf
+    </div>
+
+    <footer id="footer" class="footer">
+        Copyright - Hoài Nam | Thúy Ngân | Hoàng Thành | Quốc Khánh | Minh Hiển
+    </footer>
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!-- <script src="./script.js"></script> -->
+    <script src="./script.js"></script>
 
     <script>
-        let quantity = document.getElementById('quantity');
-        let iconAdd = document.getElementById('icon-add');
-        let iconSub = document.getElementById('icon-sub');
-        iconAdd.onclick = function() {
-            quantity.value = Number(quantity.value) + 1;
-        }
-        iconSub.onclick = function() {      
-            if (Number(quantity.value) > 0) { 
-                quantity.value -= 1;
-            }
-        }
+        
     </script>
 </body>
 </html>
