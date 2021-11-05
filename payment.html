@@ -16,11 +16,40 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <style>
-        a {
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-size: 1.6rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            color: #333;
+        }
+        a:hover {
             text-decoration: none;
         }
+        @media only screen and (max-width: 991px) {
+            .container,
+            section .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+        @media only screen and (max-width: 991px) {
+            html {
+                font-size: 55%;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            html {
+                font-size: 50%;
+            }
+        }
         .payment {
-            padding-top: 6rem;
+            padding-top: 15rem;
         }
         .overlay {
             position: fixed;
@@ -69,6 +98,25 @@
         .login-box .user-box {
             position: relative;
         }
+
+        @media only screen and (max-width: 768px) {
+            .row {
+                margin-right: 0;
+                margin-left: 0;
+            }
+            .well {
+                padding: 0;
+            }
+            .col-xs-10 {
+                width: 100%;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .payment {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
         
         </style>
         
@@ -99,8 +147,8 @@
         </div>
     </header>
 
-    <div class="payment">
-        <div class="payment">
+    <section class="payment">
+        <div class="container payment-container">
             <div class="row">
                 <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
                     <div class="row">
@@ -195,7 +243,11 @@
             </div>
         </div>
 
-    </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        Copyright - Hoài Nam | Thúy Ngân | Hoàng Thành | Quốc Khánh | Minh Hiển
+    </footer>
     
     
         <div id="popup4" class="overlay">
@@ -212,5 +264,6 @@
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="./script.js"></script>
 </body>
 </html>
