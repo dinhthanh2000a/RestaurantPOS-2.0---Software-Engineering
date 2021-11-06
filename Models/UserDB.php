@@ -2,8 +2,8 @@
 
 class UserDB extends DB{
 
-    public function InsertNewUser($username,$fullname,$password,$phone){
-        $qr = "INSERT INTO USERS VALUES('1','$username','$fullname','$password','$phone')";
+    public function InsertNewUser($username,$fullname,$password,$email,$phone){
+        $qr = "INSERT INTO USERS VALUES('$username','$fullname','$password','$email','$phone')";
 
         $result = false;
         if(mysqli_query($this->connect,$qr)){
@@ -12,8 +12,8 @@ class UserDB extends DB{
         return json_encode($result);
     }
     
-    public function InsertNewEmployee($code,$username,$fullname,$password,$dob,$phone,$email,$address){
-        $qr = "INSERT INTO EMPLOYEES VALUES('$code','$username','$fullname','$password','$dob','$phone','$email','$address')";
+    public function InsertNewEmployee($username,$fullname,$password,$dob,$phone,$email,$address){
+        $qr = "INSERT INTO EMPLOYEES VALUES('$username','$fullname','$password','$dob','$phone','$email','$address')";
 
         $result = false;
         if(mysqli_query($this->connect,$qr)){
@@ -22,7 +22,7 @@ class UserDB extends DB{
         return json_encode($result);
     }
 
-    public function checkUsername($username){
+    /* public function checkUsername($username){
         $qr = "SELECT IDUSER FROM USERS
             WHERE username='$username'";
         $rows = mysqli_query($this->connect,$qr);
@@ -31,7 +31,7 @@ class UserDB extends DB{
             $kq = true;
         }
         return json_encode($kq);
-    }
+    } */
 
 
     

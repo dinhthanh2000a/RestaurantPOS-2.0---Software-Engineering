@@ -1,0 +1,14 @@
+.cls{
+    display: inline-block;
+    margin:5px;
+    box-shadow: 3px 2px 1px rgb(223, 255, 171);
+    background-color: rgb(221, 221, 221);
+}
+.imgs{
+    height:300px;
+}
+.navbar{
+    background-color:rgb(255, 146, 68);
+    display:inline-block;
+    height:50px;
+}

@@ -59,7 +59,7 @@ class LoginController extends Controller
                         $password = $row['PASS'];
                     }
                     if (password_verify($password_input, $password)) {
-                        $_SESSION["id"] = $id;
+                        $_SESSION["idemp"] = $id;
                         $this->callview(
                             "Home",
                             [
@@ -89,7 +89,7 @@ class LoginController extends Controller
                         $password = $row['PASS'];
                     }
                     if (password_verify($password_input, $password)) {
-                        $_SESSION["id"] = $id;
+                        $_SESSION["iduser"] = $id;
                         $this->callview(
                             "Home",
                             [
@@ -119,7 +119,7 @@ class LoginController extends Controller
                         $password = $row['PASS'];
                     }
                     if ($password_input == $password) {
-                        $_SESSION["id"] = $id;
+                        $_SESSION["idmanager"] = $id;
                         $this->callview(
                             "Home",
                             [
