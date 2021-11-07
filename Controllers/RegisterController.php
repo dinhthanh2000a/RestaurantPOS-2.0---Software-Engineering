@@ -2,19 +2,15 @@
 class RegisterController extends Controller{
 
     public $UserDB;
-
+    # kết nối cơ sở dữ liệU UserDB
     public function __construct(){
         $this->UserDB = $this->callmodel("UserDB");
     }
-
+    # hiển thị trang đăng ký 
     public function show(){
         $this->callview("Home",["page"=>"Register"]);
     }
-    public function checkUserName(){
-        $username = $_POST["username"];
-
-        $this->UserDB->checkUserName("username");
-    }
+   # đăng ký tài khoản khách hàng
     public function userregister(){
         //1. get data employee nhập
         if(isset($_POST["btnregister"])){
@@ -26,7 +22,6 @@ class RegisterController extends Controller{
             $phone = $_POST["phone"];
             // 2. Insert database bảng USERS
             $kq = $this->UserDB->InsertNewUser($username,$fullname,$password,$email,$phone);
-            echo $kq;
             // 3. Show kết quả thành công/ thất bại
             $this->callview("Home",
             [
@@ -35,6 +30,7 @@ class RegisterController extends Controller{
             ]);
         }
     }
+    # đăng ký tài khoản nhân viên
     public function employeeregister(){
         //1. get data employee nhập
         if(isset($_POST["btnregister"])){
@@ -46,10 +42,8 @@ class RegisterController extends Controller{
             $dob = $_POST["dob"];
             $phone = $_POST["phone"];
             $address = $_POST["address"];
-            print_r($username);
             // 2. Insert database bảng USERS
             $kq = $this->UserDB->InsertNewEmployee($username,$fullname,$password,$dob,$phone,$email,$address);
-            echo $kq;
             // 3. Show kết quả thành công/ thất bại
             $this->callview("Home",
             [

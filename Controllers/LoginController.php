@@ -3,38 +3,26 @@
 class LoginController extends Controller
 {
     public $UserDB;
-    public $LoginModel;
-    public $MenuModel;
+    # Tạo kết nối đến UserDB
     public function __construct()
     {
         $this->UserDB = $this->callmodel("UserDB");
-        $this->LoginModel = $this->callmodel("LoginModel");
-        $this->MenuModel = $this->callmodel("DishDB");
-        $this->MenuModel = $this->MenuModel->getDB();
     }
+    #hiển thị ra trang login
     public function show()
     {
         $user = $this->callmodel('UserDB');
         $this->callview("Home", ["page" => "Login"]);
     }
+    #xác thực tài khooản và đăng nhập vào hệ thống
     public function login()
     {
         $result_mess = false;
-
         if (isset($_POST["ExitLogin"])) {
-            $this->callview(
-                "Home",
-                [
-                    "page" => "Menu",
-                    "menu" => $this->MenuModel
-                ]
-            );
+            header('Location: index.php?controller=Menu');
         }
         if (isset($_POST["register"])) {
-            $this->callview(
-                "Home",
-                ["page" => "register"]
-            );
+            header('Location: index.php?controller=register');
         }
         if (isset($_POST["submitLogin"])) {
             $username = $_POST['uname'];
@@ -42,16 +30,10 @@ class LoginController extends Controller
             $type = $_POST['type'];
             if ($type == 2) print_r($type);
             if (empty($_POST['uname']) || empty($_POST['password'])) {
-                $this->callview(
-                    "Home",
-                    [
-                        "page" => "Login",
-                        "result" => $result_mess
-                    ]
-                );
+                $this->callview("Home", ["page" => "Login", "result" => $result_mess]);
             }
             if ($type == 2) {
-                $result = $this->LoginModel->loginemp($username);
+                $result = $this->UserDB->loginemp($username);
                 if (mysqli_num_rows($result)) {
                     while ($row = mysqli_fetch_array($result)) {
                         $id = $row['USERNAME'];
@@ -60,28 +42,16 @@ class LoginController extends Controller
                     }
                     if (password_verify($password_input, $password)) {
                         $_SESSION["idemp"] = $id;
-                        $this->callview(
-                            "Home",
-                            [
-                                "page" => "Employee",
-                                "result" => $result_mess = true
-                            ]
-                        );
+                        header('Location: index.php?controller=Employee');
                     } else {
                         $this->callview("Home", ["page" => "Login", "result" => $result_mess]);
                     }
                 } else {
-                    $this->callview(
-                        "Home",
-                        [
-                            "page" => "Login",
-                            "result" => $result_mess
-                        ]
-                    );
+                    $this->callview("Home", ["page" => "Login","result" => $result_mess]);
                 }
             }
             if ($type == 1) {
-                $result = $this->LoginModel->loginuser($username);
+                $result = $this->UserDB->loginuser($username);
                 if (mysqli_num_rows($result)) {
                     while ($row = mysqli_fetch_array($result)) {
                         $id = $row['USERNAME'];
@@ -90,28 +60,16 @@ class LoginController extends Controller
                     }
                     if (password_verify($password_input, $password)) {
                         $_SESSION["iduser"] = $id;
-                        $this->callview(
-                            "Home",
-                            [
-                                "page" => "Menu",
-                                "menu" => $this->MenuModel
-                            ]
-                        );
+                        header('Location: index.php?controller=Menu');
                     } else {
                         $this->callview("Home", ["page" => "Login", "result" => $result_mess]);
                     }
                 } else {
-                    $this->callview(
-                        "Home",
-                        [
-                            "page" => "Login",
-                            "result" => $result_mess
-                        ]
-                    );
+                    $this->callview("Home", ["page" => "Login", "result" => $result_mess]);
                 }
             }
             if ($type == 3) {
-                $result = $this->LoginModel->loginmanger($username);
+                $result = $this->UserDB->loginmanger($username);
                 if (mysqli_num_rows($result)) {
                     while ($row = mysqli_fetch_array($result)) {
                         $id = $row['USERNAME'];
@@ -120,32 +78,24 @@ class LoginController extends Controller
                     }
                     if ($password_input == $password) {
                         $_SESSION["idmanager"] = $id;
-                        $this->callview(
-                            "Home",
-                            [
-                                "page" => "Manage",
-                                "menu" => $this->MenuModel
-                            ]
-                        );
+                        header('Location: index.php?controller=Manage');
                     } else {
                         $this->callview("Home", ["page" => "Login", "result" => $result_mess]);
                     }
                 } else {
-                    $this->callview(
-                        "Home",
-                        [
-                            "page" => "Login",
-                            "result" => $result_mess
-                        ]
-                    );
+                    $this->callview("Home", ["page" => "Login", "result" => $result_mess]);
                 }
             }
         }
     }
 
+    #đăng xuất khỏi hệ thống
     public function logout(){
-        unset($_SESSION["id"]);
+        unset($_SESSION["idmanager"]);
+        unset($_SESSION["idemp"]);
+        unset($_SESSION["iduser"]);
         session_destroy();
-        $this->callview("Home", ["page" => "Login"]);
+        #$this->callview("Home", ["page" => "Login"]);
+        header('Location: index.php?controller=Login');
     }
 }

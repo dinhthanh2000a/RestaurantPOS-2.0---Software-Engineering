@@ -1,36 +1,52 @@
-body{
-    background-color:darkcyan;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.menuss{
+    padding:120px 5px 5px 5px;
 }
-*{
-    font-family: sans-serif;
-    box-sizing: border-box;
-}
-.contentReg{
-    border: 2px solid #ccc;
-    background: #fff;
+.formaddemp{
+    background-color:white;
     border-radius: 15px;
+    margin:0 auto;
+    width:850px;
+    display:block;
+    padding:10px;
+    box-shadow: 0 0 3px 3px rgb(5, 221, 38);
 }
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
+.formaddemp > div{
+    display:inline-block;
 }
-form{
-    width: 660px;
-    padding: 30px;
-    /* border: 2px solid #ccc;
-    background: #fff;
-    border-radius: 15px; */
+.formaddemp > button{
+    display:block;
+    color:rgb(5, 221, 38);
+    background: rgb(225, 255, 229);/* #198754; */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px auto;
+    width:120px;
+    border: 1px solid rgb(5, 221, 38);
+    font-weight:bold;
+}
+.formaddemp > button:hover{
+    background:rgb(5, 221, 38);
+    color:rgb(255, 255, 255);
+}
+@media only screen and (max-width: 800px) {
+    .formaddemp{
+        width:500px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .formaddemp{
+        width:350px;
+    }
+}
+.formaddemp > div > *{
+    width:100%;
 }
 input{
     display: block;
     border: 2px solid #ccc;
-    width: 95%;
+    width: 40%;
     padding: 10px;
-    margin: 10px auto;
+    margin: 10px;
     border-radius: 5px;
 }
 label{
@@ -38,25 +54,14 @@ label{
     font-size: 18px;
     padding: 10px;
 }
-button{
-    float: right;
-    background: darkcyan;/* #198754; */
-    padding: 10px 15px;
-    color: #fff;
-    border-radius: 5px;
-    margin-right: 10px;
-    border: none;
-}
-button:hover{
-    opacity: 0.7;
-}
+
 .error{
     background: #F2DEDE;
     color: #a94442;
     padding: 10px;
-    width: 95%;
+    width: 100%;
     border-radius: 5px;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 .info{
     float: left;

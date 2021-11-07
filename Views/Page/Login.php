@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login-system</title>
+
     <link type="text/css" rel="stylesheet" href="./public/css/login.css">
-</head>
-<body>
+<section class="menu loginsssssssssss">
     <div>
-    <form action="index.php?controller=login&action=login" method="POST">
-        <h2>ĐĂNG NHẬP</h2>
+    <form id="loginview" action="index.php?controller=login&action=login" method="POST">
+        <h1>ĐĂNG NHẬP</h1>
         <?php if (isset($_GET['error'])){
             ?>
             <p class="error"><?php echo $_GET['error']; ?> </p>
@@ -20,40 +13,26 @@
         <br>
         <label>Mật khẩu</label>
         <input type="password" name = "password" placeholder="Nhập mật khẩu">
-        <select name="type" id="type">
+        <select name="type" id="type" class="typeuser">
                 <option value="1">Khách Hàng</option>
                 <option value="2">Nhân Viên</option>
                 <option value="3">Quản Lý</option>
         </select>
         <br>
-        <button name="ExitLogin">Bỏ qua</button>
         <button type="submit" name="submitLogin">Đăng nhập</button><br>
-        <div>Bạn chưa có tài khoản?
-        <button name="register">Đăng ký</button>
-        </div>
-        <br>
-    </form>
-    <?php if (isset($data["result"])){
-        if($data["result"]=="true"){
-            ?>
-            <h4>
-                <?php echo "Đăng nhập thành công";
 
-                ?>
-            </h4>
-            <?php
-        }
-        else{
-            ?>
-            <h4>
-                <?php echo "Tên hoặc mật khẩu không đúng";
-                ?>
-            </h4>
-            <?php
-        }
-    }
-    ?>
+        <button name="ExitLogin">Bỏ qua</button>
+        <div >Bạn chưa có tài khoản?
+        <button class="registersss" name="register">Đăng ký</button>
+        </div style="margin:10px;">
+        <br><?php if (isset($data["result"])){
+        if($data["result"]=="true"){
+            ?> <h4><?= "Đăng nhập thành công";?> </h4>
+            <?php  } else{ ?>
+            <h4 class="error"><?= "Tên hoặc mật khẩu không đúng";?></h4>
+            <?php }}?>
+    </form>
+    
     </div>
-</body>
-</html>
+</section>
 

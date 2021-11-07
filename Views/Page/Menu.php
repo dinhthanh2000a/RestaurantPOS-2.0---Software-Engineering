@@ -1,22 +1,35 @@
-
-    <div>
-    <?php 
-        foreach($data["menu"] as $x => $val) {
-        ?><div class="cls"> <p><?= $val['IDDISH'];?></p>
-            <p><?= $val['DISHNAME'];?></p>
-            <p><?= $val['PRICE'];?></p>
-            <p><?= $val['DESCRIP'];?></p>
-            <p><?= $val['TYPEDISH'];?></p>
-            <img class="imgs" src="./public/img/dish/<?= $val['PICTURE'] ?>">
-            <br>
-            <a href="index.php?controller=Cart&action=store&Id=<?= $val['IDDISH'];?>">chi tiết</a>
-            <form action="index.php?controller=Cart&action=store" method="GET">
-                <input type="button" name="Id" value="<?= $val['IDDISH'];?>" style="display:none">
-                <input type="submit" value="Thêm vào giỏ">
-            </form>
-        
-        </div><?php
-        }
-    ?>
+<section id="drinks" class="menu drinks">
+    <div class="container">
+        <h2 class="heading">FOOD</h2>
+        <ul class="list">
+        <?php foreach($data["menu"] as $x => $val) { if($val['TYPEDISH'] == 'food'){?>
+            <li class="item">
+                <a href="index.php?controller=Dish&Id=<?= $val['IDDISH'];?>" class="itemLink"></a>                
+                <img src="./public/img/dish/<?= $val['PICTURE'] ?>" alt=""></a> 
+                <h4><?= $val['DISHNAME'];?></h4>
+                <hr>
+                <div class="buy">
+                    <span class="price"><?= $val['PRICE'];?> VNĐ </span>
+                    <a href="index.php?controller=Cart&action=store&Id=<?= $val['IDDISH']?>" class="btn">Add To Cart</a>
+                </div>
+            </li>
+        <?php }} ?>
+        </ul>
+        <hr>
+        <h2 class="heading">DRINK</h2>
+        <ul class="list">
+        <?php foreach($data["menu"] as $x => $val) { if($val['TYPEDISH'] == 'drink'){?>
+            <li class="item">
+                <a href="index.php?controller=Dish&Id=<?= $val['IDDISH'];?>" class="itemLink"></a>                
+                <img src="./public/img/dish/<?= $val['PICTURE'] ?>" alt=""></a> 
+                <h4><?= $val['DISHNAME'];?></h4>
+                <hr>
+                <div class="buy">
+                    <span class="price"><?= $val['PRICE'];?> VNĐ </span>
+                    <a href="index.php?controller=Cart&action=store&Id=<?= $val['IDDISH']?>" class="btn">Add To Cart</a>
+                </div>
+            </li>
+        <?php }} ?>
+        </ul>
     </div>
-
+</section>
