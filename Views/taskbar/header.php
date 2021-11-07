@@ -15,6 +15,9 @@
             <?php if(!empty($_SESSION["idmanager"])) { ?>
             <a href="index.php?controller=Manage">
                 <i class="fas fa-sliders-h"></i>
+            </a>
+            <a class="fas" href="index.php?controller=manage&action=showemp">
+                <i class="fas fa-users-cog fa-concierge-bell"></i>
             </a><?php } ?>
 
             <?php if(!empty($_SESSION["idemp"])) { ?>
