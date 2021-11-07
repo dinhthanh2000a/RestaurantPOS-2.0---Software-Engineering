@@ -99,7 +99,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #333;
-  background-color: #eee;
+  background-color:#eee;
 }
 
 ul {
@@ -130,7 +130,6 @@ section {
   transition: all 0.5s;
   cursor: pointer;
 }
-
 .btn:hover {
   color: #0bbc61;
   letter-spacing: 0.1rem;
@@ -151,14 +150,12 @@ section {
   background-color: #fff;
   box-shadow: 0 0 5px 5px #efeded;
 }
-
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 9%;
 }
-
 .header .logo {
   font-size: 3rem;
   font-weight: 500;
@@ -184,22 +181,21 @@ section {
   background-color: #0bbc61;
   transform: rotate(360deg);
 }
-
 .header .icons .loginsss {
   margin-left: 1rem;
   display: inline-block;
   padding: 1rem 2rem;
   background-color: #ffffff;
-  border: 1px solid #0bbc61;
+  border:1px solid #0bbc61;
   color: #0bbc61;
   border-radius: 2rem;
   transition: all 1s;
 }
-
 .header .icons .loginsss:hover {
   color: #ffffff;
   background-color: #0bbc61;
 }
+
 
 .header .icons .user-desc {
   position: absolute;
@@ -221,7 +217,6 @@ section {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
 .header .icons .user-desc a:hover {
   color: #0bbc61;
 }
@@ -231,31 +226,26 @@ section {
     font-size: 55%;
   }
 }
-
 @media only screen and (max-width: 768px) {
   html {
     font-size: 50%;
   }
 }
-
 .menu {
   padding-top: 12rem;
   padding-bottom: 3rem;
   background-color: #eee;
 }
-
 .menu .heading {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
-
 .menu .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   gap: 1.5rem;
 }
-
 .menu .list .item {
   background-color: #fff;
   padding-top: 2rem;
@@ -264,7 +254,6 @@ section {
   overflow: hidden;
   text-align: center;
 }
-
 .menu .list .item .itemLink {
   display: inline-block;
   position: absolute;
@@ -274,48 +263,38 @@ section {
   right: 0;
   z-index: 10;
 }
-
 .menu .list .item .eye-icon {
   top: 1.5rem;
   left: -15rem;
 }
-
 .menu .list .item .heart-icon {
   top: 1.5rem;
   right: -15rem;
 }
-
 .menu .list .item:hover .eye-icon {
   left: 1.5rem;
 }
-
 .menu .list .item:hover .heart-icon {
   right: 1.5rem;
 }
-
 .menu .list .item img {
   height: 17rem;
   margin: 0 1rem;
 }
-
 .menu .list .item h4 {
   margin-top: 1rem;
   font-size: 2.5rem;
   font-weight: 500;
 }
-
 .menu .list .item .stars {
   margin-top: 1.5rem;
 }
-
 .menu .list .item .stars i {
   color: #0bbc61;
 }
-
 .menu .list .item .buy {
   margin-top: 1.5rem;
 }
-
 .menu .list .item .btn {
   position: relative;
   z-index: 100;
@@ -332,13 +311,11 @@ section {
     height: auto;
   }
 }
-
 .dish {
   padding-top: 12rem;
   font-size: 1.8rem;
   background-color: #fff;
 }
-
 .dish .overlay {
   position: absolute;
   top: 0;
@@ -349,7 +326,6 @@ section {
   background-color: #eee;
   z-index: 10;
 }
-
 .dish .container {
   display: flex;
   align-items: flex-start;
@@ -357,7 +333,6 @@ section {
   position: relative;
   z-index: 100;
 }
-
 .dish .image {
   text-align: center;
   padding: 2rem;
@@ -366,7 +341,6 @@ section {
   border-radius: 0.25rem;
   background-color: #fff;
 }
-
 .dish .info {
   padding: 2rem;
   border: 1px solid #000;
@@ -377,46 +351,40 @@ section {
   border-radius: 0.25rem;
   background-color: #fff;
 }
-
 .dish .info h3 {
   font-size: 3rem;
   font-weight: 400;
 }
-
 .dish .info span.title {
   font-weight: 700;
 }
-
 .dish .info .field {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
-.dish .info .quantity .icon, .dish .info .quantity input {
+.dish .info .quantity .icon,
+.dish .info .quantity input {
   display: inline-block;
   width: 3rem;
   height: 3rem;
   line-height: 3rem;
   text-align: center;
 }
-
 .dish .info .quantity .icon {
   background-color: #0bbc61;
   color: #fff;
   cursor: pointer;
 }
-
 .dish .info .quantity input {
   outline: none;
   border: 0;
   font-size: 2rem;
 }
-
-.dish .info .quantity input::-webkit-outer-spin-button, .dish .info .quantity input::-webkit-inner-spin-button {
+.dish .info .quantity input::-webkit-outer-spin-button,
+.dish .info .quantity input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .dish .info .btn {
   margin-top: 2rem;
 }
@@ -427,12 +395,10 @@ section {
     align-items: stretch;
   }
 }
-
 .cart {
   padding-top: 12rem;
   padding-bottom: 3rem;
 }
-
 .cart .overlay {
   position: absolute;
   top: 0;
@@ -443,7 +409,6 @@ section {
   background-color: #eee;
   z-index: 10;
 }
-
 .cart .container {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -454,7 +419,6 @@ section {
   position: relative;
   z-index: 100;
 }
-
 .cart h4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -462,7 +426,6 @@ section {
   font-weight: 500;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-
 .cart .list {
   display: flex;
   flex-wrap: wrap;
@@ -470,7 +433,6 @@ section {
   align-items: center;
   flex: 1 1 45rem;
 }
-
 .cart .item {
   display: flex;
   align-items: center;
@@ -478,48 +440,42 @@ section {
   gap: 2rem;
   margin: 1rem 3rem;
 }
-
 .cart .item img {
   width: 8rem;
   height: 8rem;
 }
-
 .cart .item .info h5 {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1rem;
 }
-
-.cart .item .info .icon, .cart .item .info input {
+.cart .item .info .icon,
+.cart .item .info input {
   display: inline-block;
   width: 3rem;
   height: 3rem;
   line-height: 3rem;
   text-align: center;
 }
-
 .cart .item .info .icon {
   background-color: #0bbc61;
   color: #fff;
   cursor: pointer;
 }
-
 .cart .item .info input {
   outline: none;
   border: 0;
   font-size: 2rem;
 }
-
-.cart .item .info input::-webkit-outer-spin-button, .cart .item .info input::-webkit-inner-spin-button {
+.cart .item .info input::-webkit-outer-spin-button,
+.cart .item .info input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .cart .item .price {
   font-size: 2rem;
   color: #0bbc61;
 }
-
 .cart .btn {
   width: 100%;
   text-align: center;
@@ -532,27 +488,23 @@ section {
 .orders {
   margin-top: 10rem;
 }
-
 .orders .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   gap: 3rem;
 }
-
 .orders .item {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   padding: 1rem;
 }
-
 .orders .item h5 {
   font-size: 2rem;
   font-weight: 500;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-
 .orders .item .info .field {
   display: flex;
   align-items: center;
@@ -560,7 +512,6 @@ section {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
 .orders.btn {
   width: 100%;
   margin-bottom: 1rem;
@@ -572,13 +523,11 @@ section {
     min-width: 450px;
   }
 }
-
 @media only screen and (max-width: 540px) {
   .order-detail-container {
     min-width: 300px;
   }
 }
-
 .profile {
   width: 100%;
   height: 100vh;
@@ -586,18 +535,15 @@ section {
   position: relative;
   overflow: hidden;
 }
-
 .profile .pattern-top {
   transform: translate(-25%, -50%);
 }
-
 .profile .pattern-bottom {
   position: absolute;
   bottom: 0;
   right: 0;
   transform: translate(20%, 62%);
 }
-
 .profile-container {
   width: 35rem;
   position: absolute;
@@ -608,19 +554,16 @@ section {
   border-radius: 1rem;
   background-color: #fff;
 }
-
 .profile-pattern {
   display: block;
   width: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-
 .profile-info {
   position: relative;
   text-align: center;
 }
-
 .profile .fa-user {
   background-color: #249788;
   border-radius: 100%;
@@ -634,7 +577,6 @@ section {
   line-height: 8rem;
   color: #fff;
 }
-
 .profile-name {
   padding-top: 7.5rem;
   font-size: 2rem;
@@ -642,19 +584,16 @@ section {
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
-
 .profile-name span {
   padding-left: 1rem;
   color: #969696;
   font-weight: 400;
 }
-
 .profile-address {
   color: #969696;
   padding-bottom: 3rem;
   border-bottom: 1px solid #969696;
 }
-
 .profile-list {
   display: flex;
   max-width: 245px;
@@ -664,13 +603,11 @@ section {
   padding-top: 3rem;
   padding-bottom: 2.5rem;
 }
-
 .profile-item__num {
   font-size: 2rem;
   font-weight: 700;
   padding-bottom: 1rem;
 }
-
 .profile-item__name {
   color: #969696;
 }
@@ -686,13 +623,11 @@ section {
     transform: translate(49%, 65%);
   }
 }
-
 @media only screen and (max-width: 1024px) {
   .profile-container {
     max-width: 1024px;
   }
 }
-
 @media only screen and (max-width: 768px) {
   .profile-container {
     max-width: 768px;
@@ -704,7 +639,6 @@ section {
     transform: translate(61%, 65%);
   }
 }
-
 @media only screen and (max-width: 480px) {
   .profile-container {
     max-width: 325px;
