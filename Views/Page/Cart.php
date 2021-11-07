@@ -36,7 +36,7 @@
         <input type="text" style="margin:5px;" name="phone" placeholder="Nhập số điện thoại">
       </div>  <?php } 
       if(empty($_SESSION["idemp"]) && empty($_SESSION["idmanager"])){ ?>
-        <button type="submit" class="btn">PAYMENT</btn>
+        <button type="submit" class="btn">Order</btn>
         <?php } 
       } else { ?> <h4 class="item">Không có sản phẩm nào trong giỏ</h4>  <?php }  ?>
     </form>
