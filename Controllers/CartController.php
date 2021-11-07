@@ -7,7 +7,6 @@ class CartController extends Controller{
     }
     # lưu món ăn đã chọn vào giỏ hàng
     function store(){
-        echo "vào store";
         $Iddish = $_GET["Id"];
         $dish = $this->callmodel("DishDB");
         $dish = $dish->getDish($Iddish);

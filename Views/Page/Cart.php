@@ -15,10 +15,12 @@
       <img src="./public/img/dish/<?= $val['PICTURE']?>" alt="">
         <div class="info">
           <h5><?= $val['DISHNAME']?></h5>
+          <span class="icon">-</span>
           <input type="text" value="<?= $val['Quantity']?>" name="" disabled>
-          <!-- <span class="icon">+</span> -->
+          <span class="icon">+</span>
         </div>
         <span class="price"> <?= $val['Quantity']*$val['PRICE'];?> VNĐ</span>
+        <button class="btn" style="width:80px;height:50px;">Xóa</button>
       </div>
     <?php } ?>    
     </div>

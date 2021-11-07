@@ -21,7 +21,6 @@
 
     <?php require "./Views/Page/".$data["page"].".php";?>
 
-    <?php require "./Views/taskbar/footer.php";?>
 
     <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
     <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
