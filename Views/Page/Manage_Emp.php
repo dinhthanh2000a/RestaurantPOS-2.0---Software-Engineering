@@ -19,32 +19,17 @@
         <?php foreach($data["emp"] as $x => $val) {?>
             <tr>
                 <td><div><?= $val['FULLNAME'];?>
-                        <a href="index.php?controller=Manage">
-                        <i class="fas fa-edit"></i>
-                    </a>
                     </div></td>
                 <td><div><?= $val['BIRTHDAY'];?>
-                        <a href="index.php?controller=Manage">
-                        <i class="fas fa-edit"></i>
-                    </a>
                     </div></td>
                 <td><div><?= $val['SDT'];?>
-                        <a href="index.php?controller=Manage">
-                        <i class="fas fa-edit"></i>
-                    </a>
                     </div></td>
                 <td><div><?= $val['EMAIL'];?>
-                        <a href="index.php?controller=Manage">
-                        <i class="fas fa-edit"></i>
-                    </a>
                     </div></td>
                 <td><div><?= $val['ADDRESS'];?>
-                        <a href="index.php?controller=Manage">
-                        <i class="fas fa-edit"></i>
-                    </a>
                     </div></td>
                 <td><div>
-                    <a href="index.php?controller=Manage">
+                    <a href="index.php?controller=Manage&action=delete&un=<?= $val['USERNAME'];?>">
                         <i class="fas fa-eraser"></i>
                     </a>
                     </div></td></td>

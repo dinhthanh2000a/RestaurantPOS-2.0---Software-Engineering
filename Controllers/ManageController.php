@@ -22,30 +22,17 @@ class ManageController extends Controller{
     # hiển thị danh sách nhân viên
     public function showemp(){
         $emp = $this->callmodel("UserDB");
-        $emp = $emp->getEmp();
+        $emp = $emp->getemp();
         $this->callview("Home",["page"=>"Manage_Emp","emp"=>$emp]);
-        
-        /* $result = $this->UserDB->showemp();
-        echo "<h2>Dữ liệu có trong bảng cars</h2>
-            <table border='1'>
-            <tr>
-            <th>Full name</th>
-            <th>Birthday</th>
-            <th>Phone number</th>
-            <th>Email</th>
-            <th>Address</th>
-            </tr>";
-
-        while ($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['FULLNAME'] . "</td>";
-            echo "<td>" . $row['BIRTHDAY'] . "</td>";
-            echo "<td>" . $row['SDT'] . "</td>";
-            echo "<td>" . $row['EMAIL'] . "</td>";
-            echo "<td>" . $row['ADDRESS'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>"; */
     }
+    # xóa 1 nhân viên
+    public function delete(){
+        $emp = $this->callmodel("UserDB");
+        $username = $_GET['un'];
+        $emp->deleteemp($username);
+        $emp = $emp->getemp();
+        header('Location: index.php?controller=Manage&action=showemp');
+    }
+    
 }
 ?>
