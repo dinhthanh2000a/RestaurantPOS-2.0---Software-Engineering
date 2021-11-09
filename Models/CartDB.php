@@ -18,7 +18,7 @@ class CartDB extends DB{
     }
     # lấy dữ liệu Cart hiển thị cho nhân viên
     function getUniqueIdCart(){
-        $array = "SELECT DISTINCT IDCART,SDT,NAMECUST FROM CART where IDCART not in (select IDCART from PAYMENT);";
+        $array = "SELECT DISTINCT IDCART,SDT,NAMECUST,LOCATION FROM CART where IDCART not in (select IDCART from PAYMENT);";
 
         $array = mysqli_query($this->connect,$array);
         $result=[];
@@ -28,12 +28,12 @@ class CartDB extends DB{
         return $result;
     }
     # thêm Cart vào csdl
-    function addDB($name,$sdt){
+    function addDB($name,$sdt,$location){
         $idCart = date('mdYhisa', time());
         $array = "";
         foreach ($_SESSION['Cart'] as $key => $value) {
             $total = $value['PRICE'] * $value['Quantity'];
-            $array ="INSERT INTO CART VALUE('${idCart}', ${value['Quantity']}, ${value['PRICE']}, $total,'${name}',$sdt, ${value['IDDISH']});";
+            $array ="INSERT INTO CART VALUE('${idCart}', ${value['Quantity']}, ${value['PRICE']}, $total,'${name}',$sdt, ${value['IDDISH']}, '$location');";
             mysqli_query($this->connect,$array);
         }         
     }

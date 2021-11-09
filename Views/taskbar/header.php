@@ -1,6 +1,6 @@
 <header class="header">
     <div class="container header__container">
-        <a href="?controller=Menu" class="logo"><i class="fas fa-utensils"></i>POS</a>
+        <a href="?controller=Menu" class="logo"><i class="fas fa-cloud-meatball"></i> POS</a>
         <div class="icons">
             <a href="?controller=Menu">
                 <i class= "fas fa-home"></i>
@@ -9,15 +9,12 @@
             <a href="index.php?controller=Cart">
                 <i class="fas fa-shopping-cart"></i>
             </a>
-            <?= empty($_SESSION["Cart"])?0:count($_SESSION["Cart"]);?>
+            <span name="dish-in-cart"><?= empty($_SESSION["Cart"])?0:count($_SESSION["Cart"]);?></span>
             <?php } ?>
 
             <?php if(!empty($_SESSION["idmanager"])) { ?>
             <a href="index.php?controller=Manage">
                 <i class="fas fa-sliders-h"></i>
-            </a>
-            <a class="fas" href="index.php?controller=manage&action=showemp">
-                <i class="fas fa-users-cog fa-concierge-bell"></i>
             </a><?php } ?>
 
             <?php if(!empty($_SESSION["idemp"])) { ?>

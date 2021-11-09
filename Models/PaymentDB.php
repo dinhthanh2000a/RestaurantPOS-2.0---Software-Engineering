@@ -41,12 +41,12 @@ class PaymentDB extends DB{
                 
             }
             else {
-                echo "Error: " . $sql1 . "<br>" . mysqli_error($this->connect, $sql1);
+                echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
             }
             
         }
         
-        echo '<meta http-equiv="refresh" content="00; URL=index.php?controller=Employee"/>';
+        echo '<meta http-equiv="refresh" content="00; URL=/Project/index.php?controller=Employee"/>';
     }
 
     # lấy tất cả hóa đơn từ csdl
