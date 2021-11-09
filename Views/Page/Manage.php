@@ -1,21 +1,23 @@
 
 <section class="menu">
+    <form action="index.php?controller=manage&action=registeremp" method="POST">
+        <button name="registeremp" class="btn" >Thêm nhân viên</button>
+    </form>
     <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <!-- <h3 class="card-title">Revenue</h3> -->
-                        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                    </div>
                         <div class="card-body">
                             <div class="chart">
-                                <canvas id="lineChart" style="width:100%;"></canvas>
-                            </div>
+                            <canvas id="lineChart" style="width:100%;"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 
@@ -70,11 +72,6 @@
             document.getElementById('total').innerHTML = x + " VNĐ";
         </script>
     </section>
-
-
-    <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
-    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
-    <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
         var ctxL = document.getElementById("lineChart").getContext('2d');
