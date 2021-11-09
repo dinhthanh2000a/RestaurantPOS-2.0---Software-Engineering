@@ -37,7 +37,7 @@ class UserDB extends DB
     }
 
     # lấy dữ liệu danh sách nhân viên
-    public function getEmp(){
+    public function getemp(){
         $sql = "SELECT * FROM EMPLOYEES";
         $sql = mysqli_query($this->connect, $sql);
         $result=[];
@@ -53,6 +53,13 @@ class UserDB extends DB
         $sql = "SELECT * FROM EMPLOYEES";
         return mysqli_query($this->connect, $sql);
     }
+    # xóa 1 nhân viên
+    public function deleteemp($username){
+        $sql = "DELETE FROM EMPLOYEES
+        WHERE USERNAME='{$username}';";
+        return mysqli_query($this->connect, $sql);
+    }
+    
 
     /* public function checkUsername($username){
         $qr = "SELECT IDUSER FROM USERS
