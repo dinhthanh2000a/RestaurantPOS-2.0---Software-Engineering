@@ -18,7 +18,7 @@ class CartDB extends DB{
     }
     # lấy dữ liệu Cart hiển thị cho nhân viên
     function getUniqueIdCart(){
-        $array = "SELECT DISTINCT IDCART,SDT,NAMECUST FROM CART where IDCART not in (select IDCART from PAYMENT);";
+        $array = "SELECT DISTINCT IDCART,SDT,NAMECUST,LOCATION FROM CART where IDCART not in (select IDCART from PAYMENT);";
 
         $array = mysqli_query($this->connect,$array);
         $result=[];
