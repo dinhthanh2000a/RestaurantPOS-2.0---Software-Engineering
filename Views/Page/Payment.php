@@ -73,7 +73,7 @@
                 
                 <div class="btn btn-success btn-lg btn-block">  
                 <span class="glyphicon glyphicon-chevron-right"></span>
-                <a href="/Project/index.php?controller=Payment&action=addPayment&id=<?= $data["receipt"][0]['IDCART'];?>" class="btn">DONE</a>
+                <a href="index.php?controller=Payment&action=addPayment&id=<?= $data["receipt"][0]['IDCART'];?>" class="btn">DONE</a>
                 </div>
             </form>
         </div>
@@ -85,14 +85,14 @@
                 <form>
                     <div class="user-box">
                         <label id="main" style="width: 320px; height: 400px;">
-                               <img src="/Project/public/img/momo.png" height="400" />
+                               <img src="public/img/momo.png" height="400" />
                         </label><br>
                         <label>Thank you for using our service! See you soon.</label>
                           
                     </div>
                     <div class="btn btn-success btn-lg btn-block">  
                 <span class="glyphicon glyphicon-chevron-right"></span>
-                <a href="/Project/index.php?controller=Payment&action=addPayment&id=<?= $data["receipt"][0]['IDCART'];?>" class="btn">DONE</a>
+                <a href="index.php?controller=Payment&action=addPayment&id=<?= $data["receipt"][0]['IDCART'];?>" class="btn">DONE</a>
                 </form>
             </div>
         </div>

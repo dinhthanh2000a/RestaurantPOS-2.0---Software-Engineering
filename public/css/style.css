@@ -1,56 +1,92 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+/* Cart */
+
+label {
+  color: rgb(97, 97, 97);
+  font-size: 18px;
+  padding: 10px;
+}
+
+input {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+/* Button header */
+
+.fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1
+}
+.fas{font-family:"Font Awesome 5 Free"}
+.fas{font-weight:900}
+.fa-user{
+  color:rgb(5, 221, 38);
+}
+.fa-concierge-bell {
+  margin-left: 1rem;
+  padding: 1rem;
+  background-color: #cccc;
+  color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 1s;
+}
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -79,11 +115,11 @@ section {
 }
 
 @media only screen and (max-width: 991px) {
-  .container,
-section .container {
+  .container, section .container {
     padding: 2rem 1.5rem;
   }
 }
+
 .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
@@ -125,11 +161,12 @@ section .container {
   font-weight: 500;
   color: #000;
 }
+
 .header .logo i {
   color: #0bbc61;
 }
-.header .icons .fa-home ,
-.header .icons .fa-shopping-cart,.fa-sliders-h,.fa-concierge-bell {
+
+.header .icons .fa-home, .header .icons .fa-shopping-cart, .fa-sliders-h, .fa-concierge-bell {
   margin-left: 1rem;
   padding: 1rem;
   background-color: #cccc;
@@ -139,8 +176,7 @@ section .container {
   transition: all 1s;
 }
 
-.header .icons .fa-home:hover ,
-.header .icons .fa-shopping-cart:hover,.fa-sliders-h:hover,.fa-concierge-bell:hover {
+.header .icons .fa-home:hover, .header .icons .fa-shopping-cart:hover, .fa-sliders-h:hover, .fa-concierge-bell:hover {
   color: #fff;
   background-color: #0bbc61;
   transform: rotate(360deg);
@@ -170,9 +206,11 @@ section .container {
   padding: 1rem;
   display: none;
 }
+
 .header .icons .user-desc.active {
   display: block;
 }
+
 .header .icons .user-desc a {
   display: inline-block;
   color: #000;
@@ -600,11 +638,8 @@ section .container {
   .profile .pattern-bottom {
     transform: translate(61%, 65%);
   }
-  .imgs{
-    height: 220px;
-  }
 }
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 480px) {
   .profile-container {
     max-width: 325px;
   }
@@ -617,22 +652,6 @@ section .container {
     right: 0;
     transform: translate(78%, 61%);
   }
-  .imgs{
-    height: 170px;
-  }
-}
-@media only screen and (max-width: 370px) {
-  .imgs{
-    height: 140px;
-  }
-}
-
-#filter-dish{
-  height: 30px;
-  margin-bottom:20px;
-  margin-left:50px;
-  width:100px;
-  
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,8 +13,13 @@ h1 {
     font-size:28px;
 }
 .typeuser{
-    height:25px;
+    height:35px;
     margin:10px;
+    color: rgb(97, 97, 97);
+    background: white;/* #198754; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight:bold;
 }
 form{
     width: 400px;

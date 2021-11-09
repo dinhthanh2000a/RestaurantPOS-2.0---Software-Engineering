@@ -1,6 +1,4 @@
-<script src="./public/js/Dish.js"></script>
-
-<section class="dish" >
+<section class="dish">
     <div class="overlay"></div>
         <div class="container">
             <div class="image">
@@ -12,7 +10,14 @@
                 <p class="field"><span class="title">Description:</span> <br>
                 <?= $data["dish"]['DESCRIP'];?>
                  </p>
-            <button class="btn" name="<?= $data["dish"]['IDDISH']?>" onclick="Addtocart(name)">Add To Cart</button>
+            <!-- <div class="field quantity">
+                    <span class="title">Quantity:</span>
+                    <span class="icon">+</span>
+                    <input type="number" value="1">
+                    <span class="icon">-</span>
+            </div> -->
+            <a href="index.php?controller=Cart&action=store&Id=<?= $data["dish"]['IDDISH'];?>" class="btn">Add To Cart</a>
+            <!-- <button class="btn">ADD TO CART</button> -->
         </div>
     </div>
 </section>
