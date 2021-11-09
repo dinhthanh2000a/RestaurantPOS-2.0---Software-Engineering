@@ -60,7 +60,9 @@ class UserDB extends DB
         return mysqli_query($this->connect, $sql);
     }
     
-
+    ///////////////////////
+    ///////////////////////
+    ///////////////////////
     /* public function checkUsername($username){
         $qr = "SELECT IDUSER FROM USERS
             WHERE username='$username'";
