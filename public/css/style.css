@@ -627,12 +627,11 @@ section .container {
   }
 }
 
-#filter-dish{
+.select-box{
   height: 30px;
   margin-bottom:20px;
   margin-left:50px;
   width:100px;
-  
 }
 
 /*# sourceMappingURL=style.css.map */

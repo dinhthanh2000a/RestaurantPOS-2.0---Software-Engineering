@@ -45,8 +45,6 @@ class PaymentDB extends DB{
             }
             
         }
-        
-        echo '<meta http-equiv="refresh" content="00; URL=/Project/index.php?controller=Employee"/>';
     }
 
     # lấy tất cả hóa đơn từ csdl
