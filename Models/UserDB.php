@@ -29,6 +29,31 @@ class UserDB extends DB{
         $sql = "SELECT * FROM EMPLOYEES WHERE USERNAME='{$username}'";
         return mysqli_query($this->connect,$sql);
     }
+
+    # lấy dữ liệu danh sách nhân viên
+    public function getemp(){
+        $sql = "SELECT * FROM EMPLOYEES";
+        $sql = mysqli_query($this->connect, $sql);
+        $result=[];
+        while($s = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+            array_push($result,$s);
+        }
+        return $result;
+    }
+
+    # show danh sách nhân viên
+    public function showemp()
+    {
+        $sql = "SELECT * FROM EMPLOYEES";
+        return mysqli_query($this->connect, $sql);
+    }
+    # xóa 1 nhân viên
+    public function deleteemp($username){
+        $sql = "DELETE FROM EMPLOYEES
+        WHERE USERNAME='{$username}';";
+        return mysqli_query($this->connect, $sql);
+    }
+      
     /* public function checkUsername($username){
         $qr = "SELECT IDUSER FROM USERS
             WHERE username='$username'";

@@ -13,5 +13,19 @@ class ManageController extends Controller{
                 ["page"=>"Registeremp"]);
         }
     }
+    # hiển thị danh sách nhân viên
+    public function showemp(){
+        $emp = $this->callmodel("UserDB");
+        $emp = $emp->getemp();
+        $this->callview("Home",["page"=>"Manage_Emp","emp"=>$emp]);
+    }
+    # xóa 1 nhân viên
+    public function delete(){
+        $emp = $this->callmodel("UserDB");
+        $username = $_GET['un'];
+        $emp->deleteemp($username);
+        $emp = $emp->getemp();
+        header('Location: index.php?controller=Manage&action=showemp');
+    }
 }
 ?>

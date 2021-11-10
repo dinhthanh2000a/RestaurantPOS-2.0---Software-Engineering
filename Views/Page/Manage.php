@@ -1,24 +1,23 @@
 
 <section class="menu">
-    <form action="index.php?controller=manage&action=registeremp" method="POST">
-        <button name="registeremp" class="btn" >Thêm nhân viên</button>
-    </form>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card-primary">
-                    <div class="card-header">
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <!-- <h3 class="card-title">Revenue</h3> -->
+                        </div>
                         <div class="card-body">
                             <div class="chart">
-                            <canvas id="lineChart" style="width:100%;"></canvas>
+                                <canvas id="lineChart" style="width:100%;"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
+
 
 
     <section class="orders order-today">
