@@ -40,7 +40,7 @@
         <div id="selectListed">
           <br>
           <label style="margin:5px;">Chọn bàn</label>
-          <select id="selectList">
+          <select id="selectList" class="select-box">
             <option selected>Mang về</option>
             <?php for($i=1;$i < 20;$i++){ ?>
             <option ><?= $i; ?></option>

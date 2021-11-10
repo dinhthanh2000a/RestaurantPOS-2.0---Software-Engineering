@@ -4,7 +4,7 @@
     <div class="container">
 
         <!-- filter -->
-        <select id="filter-dish" onchange="MenuChanged(this)">
+        <select id="filter-dish" class="select-box" onchange="MenuChanged(this)">
             <option>ALL</option>
             <?php $x=[]; foreach($data["menu"] as $key => $val) {
                 if(!array_key_exists($val['TYPEDISH'],$x)){?>
