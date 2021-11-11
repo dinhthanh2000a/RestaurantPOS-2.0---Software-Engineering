@@ -20,7 +20,7 @@
                         <span><?= $val['SDT'];?></span>
                     </div>
                 </div>
-                <a href="index.php?controller=Payment&id=<?= $val['IDCART'];?>" class="btn">PAYMENT</a>
+                <a href="index.php?controller=Payment&id=<?= $val['IDCART'];?>" class="btn">Detail</a>
             </div>
         <?php
         }}

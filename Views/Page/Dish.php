@@ -8,11 +8,11 @@
             </div>
             <div class="info">
                 <h3><?= $data["dish"]['DISHNAME'];?></h3>
-                <p class="field"><span class="title">Price:</span> <?= $data["dish"]['PRICE'];?> VNĐ </p>
-                <p class="field"><span class="title">Description:</span> <br>
+                <p class="field"><span class="title">Giá:</span> <?= $data["dish"]['PRICE'];?> VNĐ </p>
+                <p class="field"><span class="title">Mô Tả:</span> <br>
                 <?= $data["dish"]['DESCRIP'];?>
                  </p>
-            <button class="btn" name="<?= $data["dish"]['IDDISH']?>" onclick="Addtocart(name)">Add To Cart</button>
+            <button class="btn" name="<?= $data["dish"]['IDDISH']?>" onclick="Addtocart(name)">Thêm vào giỏ</button>
         </div>
     </div>
 </section>

@@ -29,7 +29,7 @@ class CartDB extends DB{
     }
     # thêm Cart vào csdl
     function addDB($name,$sdt,$location){
-        $idCart = date('mdYhisa', time());
+        $idCart = date('sihmdY', time()).rand(0,1000);
         $array = "";
         foreach ($_SESSION['Cart'] as $key => $value) {
             $total = $value['PRICE'] * $value['Quantity'];
