@@ -19,7 +19,7 @@
         <button class="icon" id="giam" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="+">+</button>
       </div>
       <span class="price"> <span id="<?= $val['IDDISH']."Price"?>"><?= $val['Quantity']*$val['PRICE'];?></span> VNĐ</span>
-      <button class="btn" style="width:80px;height:50px;" name="<?= $val['IDDISH']?>" onclick="deletedish(name)">Xóa</button>
+      <button class="btn" style="width:80px;height:40px;" name="<?= $val['IDDISH']?>" onclick="deletedish(name)">Xóa</button>
       </div>
     <?php } ?>
     </div>
@@ -28,18 +28,16 @@
       ?>
       <div style="margin:10px;">
         <label class="form-label">Họ và tên</label>
-        <input type="text" name="fullname" class="form-control" id="information1" placeholder="Nhập họ và tên">
+        <input type="text" name="fullname" class="form-control" placeholder="Nhập họ và tên">
       </div>
-      <div>
-        <label style="margin:5px;">Số điện thoại</label>
-        <input type="text" style="margin:5px;" name="phone" placeholder="Nhập số điện thoại" id="information2">
-      </div>
-      
-      <?php }
+      <div style="margin:10px;">
+        <label >Số điện thoại</label>
+        <input type="text" name="phone" placeholder="Nhập số điện thoại">
+      </div>  <?php } 
       if(empty($_SESSION["idemp"]) && empty($_SESSION["idmanager"])){ ?>
         <div id="selectListed">
           <br>
-          <label style="margin:5px;">Chọn bàn</label>
+          <label style="margin:10px;">Chọn bàn</label>
           <select id="selectList" class="select-box">
             <option selected>Mang về</option>
             <?php for($i=1;$i < 20;$i++){ ?>
