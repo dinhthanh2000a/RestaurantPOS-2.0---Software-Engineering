@@ -31,8 +31,8 @@
         <input type="text" name="fullname" class="form-control" id="information1" placeholder="Nhập họ và tên">
       </div>
       <div>
-        <label style="margin:5px;">Số điện thoại</label>
-        <input type="text" style="margin:5px;" name="phone" placeholder="Nhập số điện thoại" id="information2">
+        <label class="form-label">Số điện thoại</label>
+        <input type="text" name="phone" placeholder="Nhập số điện thoại" id="information2">
       </div>
       
       <?php }
