@@ -19,7 +19,7 @@
                     <button class="btn" style="width:80px;height:40px;margin-bottom:10px">Xóa</button>
 
                 </div>
-                <a href="index.php?controller=Payment&id=<?= $val['IDCART'];?>" class="btn">Detail</a>
+                <a href="index.php?controller=Payment&id=<?= $val['IDCART'];?>" class="btn">PAYMENT</a>
             </div>
         <?php
         }}
