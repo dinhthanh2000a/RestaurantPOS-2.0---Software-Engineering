@@ -15,7 +15,7 @@
       <div class="info">
         <h5><?= $val['DISHNAME']?></h5>
         <button class="icon" id="giam" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="-">-</button>
-        <input type="text" value="<?= $val['Quantity']?>" id="<?= $val['IDDISH']?>" disabled>
+        <input type="text" style="width:45px;" value="<?= $val['Quantity']?>" id="<?= $val['IDDISH']?>" disabled>
         <button class="icon" id="tang" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="+">+</button>
       </div>
       <span class="price"> <span id="<?= $val['IDDISH']."Price"?>"><?= $val['Quantity']*$val['PRICE'];?></span> VNĐ</span>
