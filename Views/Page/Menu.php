@@ -1,5 +1,3 @@
-<script src="./public/js/Dish.js"></script>
-
 <section id="drinks" class="menu drinks">
     <div class="container">
 
@@ -38,7 +36,7 @@
                 <label class="price"><?= $val['PRICE'];?></label> <span class="price">VNĐ </span>         
                 <button class="btn" id="giam" name="<?= $val['IDDISH']?>" onclick="Addtocart(name)">Thêm vào giỏ</button>
             </li>
-        <?php } ?>
+        <?php }} ?>
         </ul>
     </div>
 </section>

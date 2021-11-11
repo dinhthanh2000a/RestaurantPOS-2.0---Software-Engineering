@@ -41,7 +41,7 @@ class PaymentDB extends DB{
                 
             }
             else {
-                echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+                echo "Error: " . $sql1 . "<br>" . mysqli_error($this->connect, $sql1);
             }
             
         }

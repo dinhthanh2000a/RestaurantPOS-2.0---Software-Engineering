@@ -1,5 +1,11 @@
 <?php
 class ManageController extends Controller{
+    public $UserDB;
+    # Tạo kết nối đến UserDB
+    public function __construct()
+    {
+        $this->UserDB = $this->callmodel("UserDB");
+    }
     # hiển thị trang quản lý hệ thống 
     public function show(){
         $manage = $this->callmodel("PaymentDB");
@@ -27,5 +33,6 @@ class ManageController extends Controller{
         $emp = $emp->getemp();
         header('Location: index.php?controller=Manage&action=showemp');
     }
+    
 }
 ?>

@@ -1,6 +1,4 @@
-<script src="./public/js/Dish.js"></script>
-
-<section class="dish" >
+<section class="dish">
     <div class="overlay"></div>
         <div class="container">
             <div class="image">

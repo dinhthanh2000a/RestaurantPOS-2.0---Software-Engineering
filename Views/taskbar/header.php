@@ -1,6 +1,6 @@
 <header class="header">
     <div class="container header__container">
-        <a href="?controller=Menu" class="logo"><i class="fas fa-cloud-meatball"></i> POS</a>
+        <a href="?controller=Menu" class="logo"><i class="fas fa-utensils"></i>POS</a>
         <div class="icons">
             <a href="?controller=Menu">
                 <i class= "fas fa-home"></i>
@@ -9,7 +9,7 @@
             <a href="index.php?controller=Cart">
                 <i class="fas fa-shopping-cart"></i>
             </a>
-            <span name="dish-in-cart"><?= empty($_SESSION["Cart"])?0:count($_SESSION["Cart"]);?></span>
+            <?= empty($_SESSION["Cart"])?0:count($_SESSION["Cart"]);?>
             <?php } ?>
 
             <?php if(!empty($_SESSION["idmanager"])) { ?>

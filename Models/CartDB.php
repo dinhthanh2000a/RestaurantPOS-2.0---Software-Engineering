@@ -18,7 +18,7 @@ class CartDB extends DB{
     }
     # lấy dữ liệu Cart hiển thị cho nhân viên
     function getUniqueIdCart(){
-        $array = "SELECT DISTINCT IDCART,SDT,NAMECUST,LOCATION FROM CART where IDCART not in (select IDCART from PAYMENT);";
+        $array = "SELECT DISTINCT IDCART,SDT,NAMECUST FROM CART where IDCART not in (select IDCART from PAYMENT);";
 
         $array = mysqli_query($this->connect,$array);
         $result=[];
@@ -33,7 +33,7 @@ class CartDB extends DB{
         $array = "";
         foreach ($_SESSION['Cart'] as $key => $value) {
             $total = $value['PRICE'] * $value['Quantity'];
-            $array ="INSERT INTO CART VALUE('${idCart}', ${value['Quantity']}, ${value['PRICE']}, $total,'${name}',$sdt, ${value['IDDISH']}, '$location');";
+            $array ="INSERT INTO CART VALUE('${idCart}', ${value['Quantity']}, ${value['PRICE']}, $total,'${name}',$sdt, ${value['IDDISH']});";
             mysqli_query($this->connect,$array);
         }         
     }
