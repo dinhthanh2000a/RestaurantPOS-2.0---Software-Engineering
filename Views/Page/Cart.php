@@ -16,7 +16,7 @@
         <h5><?= $val['DISHNAME']?></h5>
         <button class="icon" id="giam" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="-">-</button>
         <input type="text" value="<?= $val['Quantity']?>" id="<?= $val['IDDISH']?>" disabled>
-        <button class="icon" id="giam" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="+">+</button>
+        <button class="icon" id="tang" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="+">+</button>
       </div>
       <span class="price"> <span id="<?= $val['IDDISH']."Price"?>"><?= $val['Quantity']*$val['PRICE'];?></span> VNĐ</span>
       <button class="btn" style="width:80px;height:50px;" name="<?= $val['IDDISH']?>" onclick="deletedish(name)">Xóa</button>
@@ -28,7 +28,7 @@
       ?>
       <div style="margin:10px;">
         <label class="form-label">Họ và tên</label>
-        <input type="text" name="fullname" class="form-control" placeholder="Nhập họ và tên">
+        <input type="text" name="fullname" class="form-control" placeholder="Nhập họ và tên" id="information1">
       </div>
       <div style="margin:10px;">
         <label class="form-label">Số điện thoại</label>
