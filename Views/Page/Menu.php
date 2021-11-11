@@ -1,9 +1,19 @@
 <section id="drinks" class="menu drinks">
     <div class="container">
-        <h2 class="heading">FOOD</h2>
-        <ul class="list">
-        <?php foreach($data["menu"] as $x => $val) { if($val['TYPEDISH'] == 'food'){?>
-            <li class="item">
+
+        <!-- filter -->
+        <select id="filter-dish" class="select-box" onchange="MenuChanged(this)">
+            <option>ALL</option>
+            <?php $x=[]; foreach($data["menu"] as $key => $val) {
+                if(!array_key_exists($val['TYPEDISH'],$x)){?>
+                <option value="<?= $val['TYPEDISH'];?>"><?= ucfirst($val['TYPEDISH'])?></option>
+            <?php  $x[$val['TYPEDISH']]=""; } } ?>
+        </select>
+
+
+        <ul class="list" id="menu-list">
+        <?php foreach($data["menu"] as $x => $val) {?>
+            <li class="item" name="<?= $val['TYPEDISH']?>">
                 <a href="index.php?controller=Dish&Id=<?= $val['IDDISH'];?>" class="itemLink"></a>                
                 <img src="./public/img/dish/<?= $val['PICTURE'] ?>" alt=""></a> 
                 <h4><?= $val['DISHNAME'];?></h4>

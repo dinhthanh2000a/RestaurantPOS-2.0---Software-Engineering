@@ -652,6 +652,21 @@ section {
     right: 0;
     transform: translate(78%, 61%);
   }
+  .imgs{
+    height: 170px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .imgs{
+    height: 140px;
+  }
+}
+
+.select-box{
+  height: 30px;
+  margin-bottom:20px;
+  margin-left:50px;
+  width:100px;
 }
 
 /*# sourceMappingURL=style.css.map */
