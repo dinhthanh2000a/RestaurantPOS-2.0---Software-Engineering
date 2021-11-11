@@ -6,6 +6,28 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 /* Cart */
 
 label {
@@ -23,6 +45,15 @@ input {
   border-radius: 5px;
 }
 
+.select-box{
+    height:35px;
+    margin:10px;
+    color: rgb(97, 97, 97);
+    background: white;/* #198754; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight:bold;
+}
 /* Button header */
 
 .fas {
@@ -48,59 +79,6 @@ input {
   cursor: pointer;
   transition: all 1s;
 }
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* Cart */
-
-label {
-  color: rgb(97, 97, 97);
-  font-size: 18px;
-  padding: 10px;
-}
-
-input {
-  display: block;
-  border: 2px solid #ccc;
-  width: 95%;
-  padding: 10px;
-  margin: 10px auto;
-  border-radius: 5px;
-}
-
-/* Button header */
-
-.fas {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1
-}
-.fas{font-family:"Font Awesome 5 Free"}
-.fas{font-weight:900}
-.fa-user{
-  color:rgb(5, 221, 38);
-}
-.fa-concierge-bell {
-  margin-left: 1rem;
-  padding: 1rem;
-  background-color: #cccc;
-  color: #000;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 1s;
-}
-
 /* HTML5 display-role reset for older browsers */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {

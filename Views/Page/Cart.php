@@ -28,7 +28,7 @@
       ?>
       <div style="margin:10px;">
         <label class="form-label">Họ và tên</label>
-        <input type="text" name="fullname" class="form-control" id="information1" placeholder="Nhập họ và tên">
+        <input type="text" name="fullname" class="form-control" placeholder="Nhập họ và tên">
       </div>
       <div style="margin:10px;">
         <label class="form-label">Số điện thoại</label>
@@ -39,7 +39,7 @@
       if(empty($_SESSION["idemp"]) && empty($_SESSION["idmanager"])){ ?>
         <div id="selectListed">
           <br>
-          <label style="margin:5px;">Chọn bàn</label>
+          <label style="margin:10px;">Chọn bàn</label>
           <select id="selectList" class="select-box">
             <option selected>Mang về</option>
             <?php for($i=1;$i < 20;$i++){ ?>
