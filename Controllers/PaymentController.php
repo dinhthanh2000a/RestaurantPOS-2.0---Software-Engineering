@@ -14,7 +14,7 @@ class PaymentController extends Controller{
     function addPayment(){
         $add = $this->callmodel("PaymentDB");
         $add = $add->addPaymentDB($_GET['id']);
-        header("Location: index.php?controller=Employee" );
+        
     }
 }
     
