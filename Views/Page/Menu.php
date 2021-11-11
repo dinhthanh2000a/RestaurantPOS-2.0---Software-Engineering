@@ -22,8 +22,8 @@
             </select>
             <select class="select-box" id="sort-dish-price" onchange="SortPrice(this.value)">
                 <option value="Gia">Giá</option>
-                <option value="asc_sort">Tăng dần</option>
-                <option value="desc_sort">Giảm dần</option>
+                <option value="asc_sort">Thấp đến cao</option>
+                <option value="desc_sort">Cao đến thấp</option>
             </select>
         </div>
         
@@ -34,7 +34,7 @@
                 <a href="index.php?controller=Dish&Id=<?= $val['IDDISH'];?>" class="itemLink"></a>                
                 <img src="./public/img/dish/<?= $val['PICTURE'] ?>" alt=""></a> 
                 <h4><?= $val['DISHNAME'];?></h4>
-                <hr>
+                <br>
                 <label class="price"><?= $val['PRICE'];?></label> <span class="price">VNĐ </span>         
                 <button class="btn" id="giam" name="<?= $val['IDDISH']?>" onclick="Addtocart(name)">Thêm vào giỏ</button>
             </li>
