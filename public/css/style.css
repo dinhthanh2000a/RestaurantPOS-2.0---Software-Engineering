@@ -664,8 +664,7 @@ section {
 
 .select-box{
   height: 30px;
-  margin-bottom:20px;
-  margin-left:50px;
+  margin:0px 30px 20px 5px;
   width:100px;
 }
 

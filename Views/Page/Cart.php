@@ -5,7 +5,7 @@
     <?php if(!empty($_GET['order'])){?> <script>alert("Đơn hàng đã được gởi")</script> <?php } ?>
     <h4>
       <ion-icon name="cart-outline"></ion-icon>
-      <span>Your Cart (<?= empty($_SESSION["Cart"])?0:count($_SESSION["Cart"])?>) </span>
+      <span>Giỏ hàng của bạn (<span name="dish-in-cart"><?= empty($_SESSION["Cart"])?0:count($_SESSION["Cart"])?></span>) </span>
     </h4>
     <?php if(!empty($_SESSION["Cart"])){ ?>
 
@@ -48,7 +48,7 @@
         </div>
         <input type="button" class="btn" id="ordersubmit" onclick="submitcart()" value="Order">
         <?php }
-      } else { ?> <h4 class="item">There are no items in the cart</h4>  <?php }  ?>
+      } else { ?> <h4 class="item">Không có sản phẩm nào trong giỏ</h4>  <?php }  ?>
     </form>
   </div>
 
