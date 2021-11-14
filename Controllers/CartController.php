@@ -45,5 +45,25 @@ class CartController extends Controller{
     function RemoveItem(){
         unset($_SESSION['Cart'][$_POST['dish']]);
     }
+    # nút cộng
+    function addButton() {
+        $Iddish = $_GET['Id'];
+        $_SESSION['Cart'][$Iddish]['Quantity'] += 1;
+        header('Location: index.php?controller=Cart');
+    }
+    # nút trừ
+    function minusButton() {
+        $Iddish = $_GET['Id'];
+        if ($_SESSION['Cart'][$Iddish]['Quantity'] > 1) {
+            $_SESSION['Cart'][$Iddish]['Quantity'] -= 1;
+        }
+        header('Location: index.php?controller=Cart');
+    }
+    # bỏ món ăn
+    function removeCart() {
+        $Iddish = $_GET['Id'];
+        unset($_SESSION['Cart'][$Iddish]);
+        header('Location: index.php?controller=Cart');
+    }
 }
 ?>

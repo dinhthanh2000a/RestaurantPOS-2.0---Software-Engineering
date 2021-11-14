@@ -27,5 +27,18 @@ class ManageController extends Controller{
         $emp = $emp->getemp();
         header('Location: index.php?controller=Manage&action=showemp');
     }
+
+    # hiển thị trang thêm món ăn
+    public function addDish() {
+        $this->callview("Home", ["page"=>"AddDish"]);
+    }
+    # hiển thị trang sửa món ăn
+    public function editDish() {
+        $dish = $this->callmodel("DishDB");
+        $id = (int)$_GET['Id'];
+        $dish = $dish->getDish($id);
+        $_SESSION['editId'] = $id;
+        $this->callview('Home', ['page'=>'EditDish','dish'=>$dish]);
+    }
 }
 ?>
