@@ -58,30 +58,39 @@ class DishController extends Controller{
     public function editDish() {
         $id = $_SESSION['editId'];
         $dishDB = $this->callmodel("DishDB");
-        // xóa ảnh
-        $img = $dishDB->getImg($id);
-        unlink("./public/img/dish/".$img);
-        if (isset($_POST['btneditdish'])) {
+        // if (isset($_POST['btneditdish'])) {
             // lấy dữ liệu
             $name = $_POST['dishname'];
             $price = (int)$_POST['price'];
             $description = $_POST['description'];
             $type = $_POST['type'];
             // xử lí ảnh
-            $file = $_FILES['image']['name'];
-            $target_dir = "./public/img/dish/";
-            $target_file = $target_dir . basename($file);
+            $target_file = "";
+            $file = null;
+            if (isset($_FILES["fileupload"])) {
+                $img = $dishDB->getImg($id);
+                unlink("./public/img/dish/".$img);
+                $file = $_FILES['image']['name'];
+                $target_dir = "./public/img/dish/";
+                $target_file = $target_dir . basename($file);
+            }
             $canUpload = true;
             $result = true;
-            if (file_exists($target_file))
+            // kiểm tra file chưa tồn tại
+            if (file_exists($target_file) && isset($_FILES["fileupload"]))
             {
                 $canUpload = false;
             }
             // đưa vào DB
             if ($canUpload) {
                 $dishDB = $this->callmodel("DishDB");
-                $result = $dishDB->editDish($id, $name, $price, $description, $type, $file);
-                if ($result) {
+                if (isset($_FILES["fileupload"])) {
+                    $result = $dishDB->editDish($id, $name, $price, $description, $type, $file);
+                }
+                else {
+                    $result = $dishDB->editDishnoImg($id, $name, $price, $description, $type);
+                }
+                if ($result && isset($_FILES["fileupload"])) {
                     move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
                 }
             }
@@ -89,9 +98,8 @@ class DishController extends Controller{
                 $result = false;
             }
             // hiện kết quả
-            var_dump($canUpload);
             $this->callview("Home", ['page' => "editDish", 'result' => $result]);
-        }
+        // }
     }
 }
 
