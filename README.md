@@ -3,14 +3,14 @@ All changes in folder "Update 14/11" (update only changed files) <br/>
 
 Details: <br/>
 ./Controllers: <br/>
-    CartController.php:
-        New: addButton(), minusButton(), removeCart()
-    DishController.php:
-        New: addDish(), removeDish(), editDish()
-    ManageController.php:
-        New: addDish(), editDish()
-./Models:
-    CartDB.php:
+    CartController.php: <br/>
+        New: addButton(), minusButton(), removeCart() <br/>
+    DishController.php: <br/>
+        New: addDish(), removeDish(), editDish() <br/>
+    ManageController.php: <br/>
+        New: addDish(), editDish() <br/>
+./Models: <br/>
+    CartDB.php: <br/>
         New: getCart()
     DishDB.php:
         New: addDish(), getImg(), removeDish(), editDish()
