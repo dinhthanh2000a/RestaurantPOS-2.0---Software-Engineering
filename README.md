@@ -11,18 +11,18 @@ Details: <br/>
         New: addDish(), editDish() <br/>
 ./Models: <br/>
     CartDB.php: <br/>
-        New: getCart()
-    DishDB.php:
-        New: addDish(), getImg(), removeDish(), editDish()
-./public/css:
-    register.css:
-        New: .selectt
-./Views/Page:
-    AddDish.php: new file
-    Cart.php:
-        New: Button +, -, x in line 18, 20, 21
-    Dish.php:
-        New: Button "Edit" and x in line 19 - 22
-    EditDish.php: new file
-    Manage.php:
-        New: Button "Add New Dish" in line 6 - 8
+        New: getCart() <br/>
+    DishDB.php: <br/>
+        New: addDish(), getImg(), removeDish(), editDish() <br/>
+./public/css: <br/>
+    register.css: <br/>
+        New: .selectt <br/>
+./Views/Page: <br/>
+    AddDish.php: new file <br/>
+    Cart.php: <br/>
+        New: Button +, -, x in line 18, 20, 21 <br/>
+    Dish.php: <br/>
+        New: Button "Edit" and x in line 19 - 22 <br/>
+    EditDish.php: new file <br/>
+    Manage.php: <br/>
+        New: Button "Add New Dish" in line 6 - 8 <br/>
