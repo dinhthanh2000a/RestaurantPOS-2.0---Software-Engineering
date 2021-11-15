@@ -18,7 +18,12 @@
             </a>
             <a class="fas" href="index.php?controller=manage&action=showemp">
                 <i class="fas fa-users-cog fa-concierge-bell"></i>
-            </a><?php } ?>
+            </a>
+            <a class="fas" href="index.php?controller=manage&action=addDish">
+                <i class="fas fa-users-cog fa-concierge-bell"></i>
+            </a>
+
+            <?php } ?>
 
             <?php if(!empty($_SESSION["idemp"])) { ?>
             <a href="index.php?controller=Employee">

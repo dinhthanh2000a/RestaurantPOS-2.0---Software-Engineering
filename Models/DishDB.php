@@ -50,5 +50,11 @@ class DishDB extends DB{
         $array = mysqli_query($this->connect,$array);
         return json_encode($array);
     }
+    # sửa món ăn (không sửa ảnh)
+    function editDishnoImg($id, $name, $price, $description, $type) {
+        $array = "UPDATE DISH SET DISHNAME = '${name}', PRICE = $price, DESCRIP = '${description}', TYPEDISH = '${type}' WHERE IDDISH = $id;";
+        $array = mysqli_query($this->connect,$array);
+        return json_encode($array);
+    }
 }
 ?>

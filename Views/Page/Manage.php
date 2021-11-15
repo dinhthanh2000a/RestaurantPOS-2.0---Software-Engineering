@@ -1,8 +1,5 @@
 
 <section class="menu">
-    <form action="index.php?controller=manage&action=addDish" method="POST">
-        <button class="btn">Thêm món mới</button>
-    </form>
     <div class="container">
             <div class="row">
                 <div class="col-md-12">
