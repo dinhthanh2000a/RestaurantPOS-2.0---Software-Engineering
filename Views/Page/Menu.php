@@ -35,8 +35,10 @@
                 <img src="./public/img/dish/<?= $val['PICTURE'] ?>" alt=""></a> 
                 <h4><?= $val['DISHNAME'];?></h4>
                 <br>
-                <label class="price"><?= $val['PRICE'];?></label> <span class="price">VNĐ </span>         
+                <label class="price"><?= $val['PRICE'];?></label> <span class="price">VNĐ </span>  
+                <?php if(empty($_SESSION["idmanager"])) { ?>       
                 <button class="btn" id="giam" name="<?= $val['IDDISH']?>" onclick="Addtocart(name)">Thêm vào giỏ</button>
+                <?php } ?>
             </li>
         <?php } ?>
         </ul>
