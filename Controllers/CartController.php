@@ -65,5 +65,13 @@ class CartController extends Controller{
         unset($_SESSION['Cart'][$Iddish]);
         header('Location: index.php?controller=Cart');
     }
+    # tính tổng giá tiền trong giỏ hàng
+    function TotalPrice(){
+        $sum = 0;
+        foreach ($_SESSION['Cart'] as $key => $value){
+            $sum += $value['Quantity']*$value['PRICE'];
+        }
+        echo $sum;
+    }
 }
 ?>

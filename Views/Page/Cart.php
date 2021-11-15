@@ -1,4 +1,5 @@
 <script src="./public/js/Cart.js"></script>
+
 <section class="cart">
   <div class="overlay"></div>
   <div class="container">
@@ -11,15 +12,17 @@
     <div class="list">
       <?php foreach($_SESSION["Cart"] as $x => $val) { ?>
       <div class="item" id="<?= $val['IDDISH']."DISH"?>">
-      <img src="./public/img/dish/<?= $val['PICTURE']?>" alt="">
-      <div class="info">
-        <h5><?= $val['DISHNAME']?></h5>
-        <button class="icon" id="giam" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="-">-</button>
-        <input type="text" style="width:45px;" value="<?= $val['Quantity']?>" id="<?= $val['IDDISH']?>" disabled>
-        <button class="icon" id="tang" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="+">+</button>
-      </div>
-      <span class="price"> <span id="<?= $val['IDDISH']."Price"?>"><?= $val['Quantity']*$val['PRICE'];?></span> VNĐ</span>
-      <button class="btn" style="width:80px;height:50px;" name="<?= $val['IDDISH']?>" onclick="deletedish(name)">Xóa</button>
+        <img src="./public/img/dish/<?= $val['PICTURE']?>" alt="">
+        <div>
+          <h2 style="width:100px;"><?= $val['DISHNAME']?></h2>
+          <div class="info">
+            <button class="icon" id="giam" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="-">-</button>
+            <input type="text" style="width:45px;" value="<?= $val['Quantity']?>" id="<?= $val['IDDISH']?>" disabled>
+            <button class="icon" id="tang" name="<?= $val['IDDISH']?>" onclick="update(name,value)" value="+">+</button>
+          </div>
+        
+        <span class="price"> <span id="<?= $val['IDDISH']."Price"?>"><?= $val['Quantity']*$val['PRICE'];?></span> VNĐ</span>
+        <button class="btn deletebtn" name="<?= $val['IDDISH']?>" onclick="deletedish(name)">Xóa</button></div>
       </div>
     <?php } ?>
     </div>
@@ -47,6 +50,7 @@
             <?php } ?>
           </select>
         </div>
+        <label style="margin-left:10px;">Tổng tiền: </label><label class="price" id="totalprice"></label><label class="price">VNĐ</label>
         <input type="button" class="btn" id="ordersubmit" onclick="submitcart()" value="Order">
         <?php }
       } else { ?> <h4 class="item">Không có sản phẩm nào trong giỏ</h4>  <?php }  ?>

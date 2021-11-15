@@ -681,14 +681,18 @@ section {
   .imgs{
     height: 170px;
   }
+  .deletebtn{
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 370px) {
   .imgs{
     height: 140px;
-}}
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
-
+  
 .select-box{
   height: 30px;
   margin:0px 30px 20px 5px;
