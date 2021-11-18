@@ -20,7 +20,7 @@
                 <i class="fas fa-users-cog fa-concierge-bell"></i>
             </a>
             <a class="fas" href="index.php?controller=manage&action=addDish">
-                <i class="fas fa-users-cog fa-concierge-bell"></i>
+                <i class="fas fa-folder-plus fa-concierge-bell"></i>
             </a>
 
             <?php } ?>
