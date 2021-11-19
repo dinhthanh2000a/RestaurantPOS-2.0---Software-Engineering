@@ -2,15 +2,15 @@
 
 class PaymentDB extends DB{
     # lấy toàn bộ hóa đơn đã thanh toán 
-    function getDB(){
-        $array = "SELECT * FROM PAYMENT;";
-        $array = mysqli_query($this->connect,$array);
-        $result=[];
-        while($s = mysqli_fetch_array($array, MYSQLI_ASSOC)){
-            array_push($result,$s);
-        }
-        return $result;
-    } 
+    // function getDB(){
+    //     $array = "SELECT * FROM PAYMENT;";
+    //     $array = mysqli_query($this->connect,$array);
+    //     $result=[];
+    //     while($s = mysqli_fetch_array($array, MYSQLI_ASSOC)){
+    //         array_push($result,$s);
+    //     }
+    //     return $result;
+    // } 
     # lấy dữ liệu để in hóa đơn thanh toán 
     function getPayment($id){
         $array = "SELECT IDCART,QUANTITY,cart.PRICE,TOTALPRICE,SDT,NAMECUST,DISHNAME FROM cart INNER JOIN dish ON cart.IDDISH=dish.IDDISH WHERE IDCART='$id';";
