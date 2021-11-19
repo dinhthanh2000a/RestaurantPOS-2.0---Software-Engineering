@@ -42,5 +42,33 @@ class CartController extends Controller{
         unset($_SESSION['Cart']);
         header('Location: index.php?controller=Cart&order=1');
     }
+    # nút cộng
+    function addButton() {
+        $Iddish = $_GET['Id'];
+        $_SESSION['Cart'][$Iddish]['Quantity'] += 1;
+        header('Location: index.php?controller=Cart');
+    }
+    # nút trừ
+    function minusButton() {
+        $Iddish = $_GET['Id'];
+        if ($_SESSION['Cart'][$Iddish]['Quantity'] > 1) {
+            $_SESSION['Cart'][$Iddish]['Quantity'] -= 1;
+        }
+        header('Location: index.php?controller=Cart');
+    }
+    # bỏ món ăn
+    function removeCart() {
+        $Iddish = $_GET['Id'];
+        unset($_SESSION['Cart'][$Iddish]);
+        header('Location: index.php?controller=Cart');
+    }
+    # tính tổng giá tiền trong giỏ hàng
+    function TotalPrice(){
+        $sum = 0;
+        foreach ($_SESSION['Cart'] as $key => $value){
+            $sum += $value['Quantity']*$value['PRICE'];
+        }
+        echo $sum;
+    }
 }
 ?>

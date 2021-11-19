@@ -32,6 +32,7 @@ function update(dishname,option){
             }
         });
     }
+    TotalPrice();
 }
 
 function deletedish(dishname){
@@ -45,6 +46,7 @@ function deletedish(dishname){
     if($("span[name=dish-in-cart]").html() == "1"){location.reload(); return;} 
     $("span[name=dish-in-cart]").html(Number($("span[name=dish-in-cart]").html())-1);
     $("#"+dishname+"DISH").remove();
+    TotalPrice();
 }
 
 function submitcart(){
@@ -78,3 +80,23 @@ function submitcart(){
         });
       }
 }
+function TotalPrice(){
+  $.ajax({
+    url:"index.php?controller=Cart&action=TotalPrice",
+    method: "POST",
+    success:function(data){
+      $('#totalprice').text(data);
+    }
+  });
+}
+$(document).ready(
+  function TotalPrice(){
+  $.ajax({
+    url:"index.php?controller=Cart&action=TotalPrice",
+    method: "POST",
+    success:function(data){
+      $('#totalprice').text(data);
+    }
+  });
+}
+)
