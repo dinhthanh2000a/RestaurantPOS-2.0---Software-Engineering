@@ -5,24 +5,27 @@
         <?php if(!empty($data["uniqueId"])){
         foreach($data["uniqueId"] as $x => $val) {  ?>
             <div class="item" style="background-color:white;">
-                <h5>Order <?= $val['IDCART'];?></h5>
+                <h5>Order:  <?= $val['IDCART'];?></h5>
                 <div class="info">
-                    
-                    <div class="field">
-                        <span>Phone number</span>
-                        <span><?= $val['SDT'];?></span>
+                <div class="field">
+                        <span>Bàn : </span>
+                        <span><?= $val['LOCATION'];?></span>
                     </div>
                     <div class="field">
                         <span>Customer</span>
                         <span><?= $val['NAMECUST'];?></span>
                     </div>
-                    <button class="btn" style="width:80px;height:40px;margin-bottom:10px">Xóa</button>
-
+                    <div class="field">
+                        <span>Phone number</span>
+                        <span><?= $val['SDT'];?></span>
+                    </div>
                 </div>
-                <a href="index.php?controller=Payment&id=<?= $val['IDCART'];?>" class="btn">PAYMENT</a>
+                <a href="index.php?controller=Payment&id=<?= $val['IDCART'];?>" class="btn">Detail</a>
             </div>
         <?php
         }}
+
+        
         else {?>  <h4 style="font-size:30px; margin:auto;" class="item">Hiện tại không có đơn đặt hàng nào</h4> <?php } ?>
     </div>
 </section>

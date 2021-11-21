@@ -1,39 +1,33 @@
 <?php
 
-class UserDB extends DB
-{
+class UserDB extends DB{
     # thêm tài khoản người dùng mới vào csdl
-    public function InsertNewUser($username, $fullname, $password, $email, $phone)
-    {
+    public function InsertNewUser($username,$fullname,$password,$email,$phone){
         $qr = "INSERT INTO USERS VALUES('$username','$fullname','$password','$email','$phone')";
-        $result = mysqli_query($this->connect, $qr);
+        $result = mysqli_query($this->connect,$qr);
         return json_encode($result);
     }
-
+    
     # thêm tài khoản nhân viên mới vào csdl
-    public function InsertNewEmployee($username, $fullname, $password, $dob, $phone, $email, $address)
-    {
+    public function InsertNewEmployee($username,$fullname,$password,$dob,$phone,$email,$address){
         $qr = "INSERT INTO EMPLOYEES VALUES('$username','$fullname','$password','$dob','$phone','$email','$address')";
-        $result = mysqli_query($this->connect, $qr);
+        $result = mysqli_query($this->connect,$qr);
         return json_encode($result);
     }
     # lấy tài khoản một khách hàng 
-    public function loginuser($username)
-    {
+    public function loginuser($username){
         $sql = "SELECT * FROM USERS WHERE USERNAME='{$username}'";
-        return mysqli_query($this->connect, $sql);
+        return mysqli_query($this->connect,$sql);
     }
     # lấy tài khoản một quản lý 
-    public function loginmanger($username)
-    {
+    public function loginmanger($username){
         $sql = "SELECT * FROM MANAGER WHERE USERNAME='{$username}'";
-        return mysqli_query($this->connect, $sql);
+        return mysqli_query($this->connect,$sql);
     }
     # lấy tài khoản một nhân viên
-    public function loginemp($username)
-    {
+    public function loginemp($username){
         $sql = "SELECT * FROM EMPLOYEES WHERE USERNAME='{$username}'";
-        return mysqli_query($this->connect, $sql);
+        return mysqli_query($this->connect,$sql);
     }
 
     # lấy dữ liệu danh sách nhân viên
@@ -59,8 +53,7 @@ class UserDB extends DB
         WHERE USERNAME='{$username}';";
         return mysqli_query($this->connect, $sql);
     }
-    
-
+      
     /* public function checkUsername($username){
         $qr = "SELECT IDUSER FROM USERS
             WHERE username='$username'";
@@ -71,4 +64,9 @@ class UserDB extends DB
         }
         return json_encode($kq);
     } */
+
+
+    
 }
+
+?>

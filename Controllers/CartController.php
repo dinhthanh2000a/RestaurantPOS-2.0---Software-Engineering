@@ -5,30 +5,14 @@ class CartController extends Controller{
     function show(){
         $this->callview("Home",["page"=>"Cart"]);
     }
-    # lưu món ăn đã chọn vào giỏ hàng
-    function store(){
-        $Iddish = $_GET["Id"];
-        $dish = $this->callmodel("DishDB");
-        $dish = $dish->getDish($Iddish);
-        if(empty($_SESSION['Cart'])){
-            $dish['Quantity']=1;
-            $_SESSION['Cart'][$Iddish]=$dish;
-        }
-        else if(!array_key_exists($Iddish,$_SESSION['Cart'])){
-            $dish['Quantity']=1;
-            $_SESSION['Cart'][$Iddish]=$dish;
-        }
-        else{
-            $_SESSION['Cart'][$Iddish]['Quantity'] += 1;
-        }
-        header('Location: index.php');
-    }
     # lưu thông tin đặt món vào CartDB
     function addCartDB(){
-        $dish = $this->callmodel("CartDB");
+
+        $dish = $this->callmodel("CartDB");        
 
         if(empty($_SESSION['iduser'])){
-            $dish = $dish->addDB($_POST['fullname'],$_POST['phone']);
+            if(empty($_POST['fullname']) || empty($_POST['phone'])){ echo 0; return;}
+            $dish = $dish->addDB($_POST['fullname'],$_POST['phone'],$_POST['place']);
         }
         else {
             $user = $this->callmodel("UserDB");
@@ -37,10 +21,29 @@ class CartController extends Controller{
             while($s = mysqli_fetch_array($user, MYSQLI_ASSOC)){
                 $result = $s;
             }
-            $dish->addDB($result['FULLNAME'],$result['SDT']);
+            $dish->addDB($result['FULLNAME'],$result['SDT'],$_POST['place']);
         }
+        echo 1;
         unset($_SESSION['Cart']);
-        header('Location: index.php?controller=Cart&order=1');
+    }
+
+    # tang so luong cua mon an
+    function ReduceQuantity(){
+        if(isset($_POST['dish'])){
+            $_SESSION['Cart'][$_POST['dish']]['Quantity']--;
+            print_r(json_encode([$_SESSION['Cart'][$_POST['dish']]['Quantity'],$_SESSION['Cart'][$_POST['dish']]['PRICE']]));
+        }
+    }
+    # giam so luong cua mon an
+    function IncreaseQuantity(){
+        if(isset($_POST['dish'])){
+            $_SESSION['Cart'][$_POST['dish']]['Quantity']++;
+            print_r(json_encode([$_SESSION['Cart'][$_POST['dish']]['Quantity'],$_SESSION['Cart'][$_POST['dish']]['PRICE']]));
+        }
+    }
+    # xoa mon an khoi gio
+    function RemoveItem(){
+        unset($_SESSION['Cart'][$_POST['dish']]);
     }
     # nút cộng
     function addButton() {
